@@ -1,4 +1,9 @@
 <template>
+  <DrawingModal
+    v-if="showModal"
+    @close="showModal = false"
+    v-bind:select="result === 0 ? first : second"
+  />
   <div class="main">
     <div class="content">
       <h1>제비뽑기</h1>
@@ -13,28 +18,37 @@
           type="text"
           placeholder="2번째 항목을 입력해주세요"
         />
-        <button v-on:click="showResult = !showResult">Draw</button>
-        <div v-if="showResult && result === 0">
-          {{ first }}
-        </div>
-        <div v-if="showResult && result === 1">
-          {{ second }}
-        </div>
+        <button v-on:click="verify()">Draw</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import DrawingModal from "./DrawingModal.vue";
+
 export default {
   name: "MainPage",
+  components: {
+    DrawingModal,
+  },
   data() {
     return {
       first: "",
       second: "",
       showResult: false,
-      result: Math.floor(Math.random() * 2),
+      showModal: false,
+      result: Math.round(Math.random()),
     };
+  },
+  methods: {
+    verify() {
+      if (this.first === "" || this.second === "") {
+        return alert("빈 값은 안되죠!");
+      }
+      this.result = Math.round(Math.random());
+      this.showModal = true;
+    },
   },
 };
 </script>
