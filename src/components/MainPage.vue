@@ -18,7 +18,7 @@
           type="text"
           placeholder="2번째 항목을 입력해주세요"
         />
-        <button v-on:click="verify()">Draw</button>
+        <button v-on:click="verify()">제비야~</button>
       </div>
     </div>
   </div>
