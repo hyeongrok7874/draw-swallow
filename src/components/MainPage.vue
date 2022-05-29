@@ -13,7 +13,13 @@
           type="text"
           placeholder="2번째 항목을 입력해주세요"
         />
-        <button>Draw</button>
+        <button v-on:click="showResult = !showResult">Draw</button>
+        <div v-if="showResult && result === 0">
+          {{ first }}
+        </div>
+        <div v-if="showResult && result === 1">
+          {{ second }}
+        </div>
       </div>
     </div>
   </div>
@@ -26,6 +32,8 @@ export default {
     return {
       first: "",
       second: "",
+      showResult: false,
+      result: Math.floor(Math.random() * 2),
     };
   },
 };
