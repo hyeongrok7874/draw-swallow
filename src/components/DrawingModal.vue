@@ -76,6 +76,7 @@ img {
   height: 100%;
   position: absolute;
   background: white;
+  border-radius: 20px;
 }
 button {
   width: 200px;
