@@ -1,24 +1,12 @@
-# draw_swallow
+# 제비뽑기
 
-## Project setup
-```
-yarn install
-```
+Vue.js를 경험하기 위한 프로젝트입니다
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## 이용방법
 
-### Compiles and minifies for production
-```
-yarn build
-```
+항목들을 입력한 후에 **제비야~** 버튼을 누르시면 제비가 날라와서 선택을 하고 떠납니다
 
-### Lints and fixes files
-```
-yarn lint
-```
+## V1
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+2개의 항목중에 뽑기가 가능합니다
+
